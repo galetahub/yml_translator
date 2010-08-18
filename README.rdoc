@@ -1,0 +1,28 @@
+= YmlTranslator
+
+Easy way to translate your I18n locale files to other languages
+
+== Install
+
+  sudo gem insall yml_translator
+
+== Usage
+
+Usage: yml_translator [options]
+
+Specific options:
+    -s, --source [PATH]              Path to I18n locale file or folder with locales files which your want translate
+    -o, --output [PATH]              Path where store output translated locales files
+    -l, --locales [LOCALES]          List of locales which will be translated to, for example: ru,uk,en
+    -p, --provider [PROVIDER]        Service to translate texts. Allowed: google/metaua/onlineua
+
+Common options:
+    -h, --help                       Show this message
+        --version                    Show version
+
+
+== Example
+
+  yml_translator -p google -l ru -s /var/www/axe_rise_up/config/locales/ -o /home/igor/tmp/
+
+Copyright (c) 2010 Brainberry, released under the MIT license
