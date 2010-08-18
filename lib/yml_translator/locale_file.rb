@@ -42,7 +42,7 @@ module YmlTranslator
       def generate(locale)
         file = create_file(locale)
         
-        IO.readlines(@filepath).each do |line|
+        IO.foreach(@filepath) do |line|
           if line.to_s.gsub(':', '').strip == @current_locale
             file.puts("#{locale}:")
           elsif line.include?(':')

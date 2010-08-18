@@ -7,8 +7,10 @@ module YmlTranslator
     # We set default values here.
     def self.parse(args)
       options = Hash.new
-      options[:source] = File.dirname(__FILE__)
-      options[:output] = File.dirname(__FILE__)
+      directory = File.join(Dir.pwd, 'config', 'locales')
+      
+      options[:source] = directory
+      options[:output] = directory
       options[:locales] = 'uk'
       options[:encoding] = "utf8"
       options[:provider] = YmlTranslator.providers.first

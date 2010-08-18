@@ -8,7 +8,7 @@ Easy way to translate your I18n locale files to other languages
 
 == Usage
 
-Usage: yml_translator [options]
+  yml_translator [options]
 
 Specific options:
     -s, --source [PATH]              Path to I18n locale file or folder with locales files which your want translate
@@ -21,8 +21,19 @@ Common options:
         --version                    Show version
 
 
+By default options source (-s) and output (-o) is ./config/locales folder. 
+So you can run this tool from rails project root folder
+
+  yml_translator -l ru,uk
+
 == Example
 
+Translate all locales files in folder "/var/www/axe_rise_up/config/locales/" via google to locale "ru":
+
   yml_translator -p google -l ru -s /var/www/axe_rise_up/config/locales/ -o /home/igor/tmp/
+
+Translate locale file "config/locales/uk.yml" to languages "en" and "ru" via google provider:
+
+  yml_translator -p google -l ru,en -s config/locales/uk.yml -o /home/igor/tmp/
 
 Copyright (c) 2010 Brainberry, released under the MIT license
